@@ -25,6 +25,7 @@ render.experimental.xml
 # Keystore files
 *.jks
 *.keystore
+*.png
 
 # Google Services (e.g. APIs or Firebase)
 google-services.json
@@ -34,3 +35,4 @@ google-services.json
 node_modules
 allure-results
 allure-report
+png
