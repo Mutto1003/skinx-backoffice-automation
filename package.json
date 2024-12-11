@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "e2e": "npx codeceptjs run ./tests/login.ts",
-    "genreport": "NODE_ENV=dev npx codeceptjs run \"tests/login/*.ts\" --plugins allure",
+    "genreport": "NODE_ENV=alpha npx codeceptjs run \"tests/login/*.ts\" --plugins allure",
     "output": "allure serve output"
   },
   "keywords": [],

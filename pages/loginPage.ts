@@ -1,7 +1,7 @@
 const { I } = inject();
 
 class loginPage {
-  titleTSC: string;
+  titleSX: string;
   lableEmail: string;
   lablePass: string;
   btnSingin: string;
@@ -14,14 +14,14 @@ class loginPage {
   constructor() {
     //insert your locators
     this.btnSingin = '//button[@type="submit"]';
-    this.titleTSC = '//span[@class="ant-typography css-1hk5pw4"]';
+    this.titleSX = '//span[@class="ant-typography css-1ulwx50"]';
     this.lableEmail = '//label[@class="ant-form-item-required"]';
     this.lablePass = '//label[@class="ant-form-item-required"]';
     this.emailInputField = '//input[@id="email"]';
     this.passInputField = '//input[@id="password"]';
     this.messageEmailError = '//div[@id="email_help"]/div[@class="ant-form-item-explain-error"]';
     this.messagePassError = '//div[@id="password_help"]/div[@class="ant-form-item-explain-error"]';
-    this.notiErrorMessage = '//div[@class="ant-notification-notice-description"]';
+    this.notiErrorMessage = '//div[@role="alert" and @class="Toastify__toast-body"]';
   }
 
   // insert your methods here
@@ -35,16 +35,16 @@ class loginPage {
     I.see("Email", this.lableEmail);
     I.see("Password", this.lablePass);
     I.see("Sign in", this.btnSingin);
-    I.see("TSC Back Office", this.titleTSC);
+    I.see("SX Back Office", this.titleSX);
   }
 
   async assertHomePageIsVisible() {
-    I.see("TSC Back Office", this.titleTSC);
+    I.see("SX Back Office", this.titleSX);
   }
 
   async assertRequiredFieldIsVisible(type: string) {
     if (type == "Email") {
-      I.see("Email is requireds", this.messageEmailError);
+      I.see("Email is required", this.messageEmailError);
     } else if (type == "Password") {
       I.see("Password is required", this.messagePassError);
     } else {
@@ -53,7 +53,7 @@ class loginPage {
   }
 
   async assertInvalidFieldIsVisible() {
-    await I.see("Invalid email or password", this.notiErrorMessage);
+    await I.see("Login Failed. Please try again.", this.notiErrorMessage);
   }
 }
 
