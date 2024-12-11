@@ -1,0 +1,27 @@
+{
+  "name": "tsc-backoffice-automation",
+  "version": "1.0.0",
+  "description": "## CodeceptJS Setup - npm init --yes - npm install codeceptjs playwright --save or npm install codeceptjs playwright prettier --save - npx codeceptjs init",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "e2e": "npx codeceptjs run ./tests/login.ts",
+    "genreport": "npx codeceptjs run \"tests/login/*.ts\" --plugins allure",
+    "output": "allure serve output"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.49.0",
+    "prettier": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.3",
+    "allure-codeceptjs": "^3.0.6",
+    "allure-commandline": "^2.32.0",
+    "codeceptjs": "^3.6.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

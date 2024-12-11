@@ -1,0 +1,445 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1733213220254' stop='1733213230735'>
+    <name>Login TSC Back Office:</name>
+    <title>Login TSC Back Office:</title>
+    <test-cases>
+        <test-case start='1733213220493' status='passed' stop='1733213221281'>
+            <name>Verify that the login screen is displayed with fields for email and password.</name>
+            <title>Verify that the login screen is displayed with fields for email and password.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213220640' status='passed' stop='1733213221262'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221264' status='passed' stop='1733213221273'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221274' status='passed' stop='1733213221276'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221276' status='passed' stop='1733213221278'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221278' status='passed' stop='1733213221280'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1733213221287' status='passed' stop='1733213222789'>
+            <name>Verify the user is successfully logged in and can access the application.</name>
+            <title>Verify the user is successfully logged in and can access the application.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213221322' status='passed' stop='1733213221936'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221938' status='passed' stop='1733213221944'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221944' status='passed' stop='1733213221946'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221946' status='passed' stop='1733213221948'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221948' status='passed' stop='1733213221949'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213221950' status='passed' stop='1733213222370'>
+                    <name>I fill field "//input[@id="email"]", "superadmin@skinx.app"</name>
+                    <title>I fill field "//input[@id="email"]", "superadmin@skinx.app"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213222370' status='passed' stop='1733213222629'>
+                    <name>I fill field "//input[@id="password"]", "whitedog"</name>
+                    <title>I fill field "//input[@id="password"]", "whitedog"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213222629' status='passed' stop='1733213222786'>
+                    <name>I click "//button[@type="submit"]"</name>
+                    <title>I click "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213222786' status='passed' stop='1733213222789'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1733213222793' status='passed' stop='1733213224301'>
+            <name>Verify the user input invalid email field.</name>
+            <title>Verify the user input invalid email field.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213222830' status='passed' stop='1733213223368'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223368' status='passed' stop='1733213223371'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223371' status='passed' stop='1733213223373'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223373' status='passed' stop='1733213223376'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223376' status='passed' stop='1733213223377'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223377' status='passed' stop='1733213223729'>
+                    <name>I fill field "//input[@id="email"]", "Panithan@mail.com"</name>
+                    <title>I fill field "//input[@id="email"]", "Panithan@mail.com"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223729' status='passed' stop='1733213223998'>
+                    <name>I fill field "//input[@id="password"]", "whitedog"</name>
+                    <title>I fill field "//input[@id="password"]", "whitedog"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213223998' status='passed' stop='1733213224145'>
+                    <name>I click "//button[@type="submit"]"</name>
+                    <title>I click "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213224146' status='passed' stop='1733213224301'>
+                    <name>I see "Invalid email or password", "//div[@class="ant-notification-notice-description"]"</name>
+                    <title>I see "Invalid email or password", "//div[@class="ant-notification-notice-description"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1733213224304' status='passed' stop='1733213226115'>
+            <name>Verify the user input invalid password field.</name>
+            <title>Verify the user input invalid password field.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213224338' status='passed' stop='1733213224877'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213224879' status='passed' stop='1733213224883'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213224883' status='passed' stop='1733213224885'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213224885' status='passed' stop='1733213224886'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213224887' status='passed' stop='1733213224888'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213224888' status='passed' stop='1733213225289'>
+                    <name>I fill field "//input[@id="email"]", "superadmin@skinx.app"</name>
+                    <title>I fill field "//input[@id="email"]", "superadmin@skinx.app"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213225290' status='passed' stop='1733213225494'>
+                    <name>I fill field "//input[@id="password"]", "1234"</name>
+                    <title>I fill field "//input[@id="password"]", "1234"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213225494' status='passed' stop='1733213225649'>
+                    <name>I click "//button[@type="submit"]"</name>
+                    <title>I click "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213225649' status='passed' stop='1733213226115'>
+                    <name>I see "Invalid email or password", "//div[@class="ant-notification-notice-description"]"</name>
+                    <title>I see "Invalid email or password", "//div[@class="ant-notification-notice-description"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1733213226123' status='passed' stop='1733213227732'>
+            <name>Verify the user input empty email field.</name>
+            <title>Verify the user input empty email field.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213226167' status='passed' stop='1733213226733'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213226734' status='passed' stop='1733213226737'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213226737' status='passed' stop='1733213226739'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213226739' status='passed' stop='1733213226741'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213226741' status='passed' stop='1733213226743'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213226743' status='passed' stop='1733213226855'>
+                    <name>I fill field "//input[@id="email"]", </name>
+                    <title>I fill field "//input[@id="email"]", </title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213226855' status='passed' stop='1733213227123'>
+                    <name>I fill field "//input[@id="password"]", "whitedog"</name>
+                    <title>I fill field "//input[@id="password"]", "whitedog"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213227123' status='passed' stop='1733213227275'>
+                    <name>I click "//button[@type="submit"]"</name>
+                    <title>I click "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213227275' status='passed' stop='1733213227732'>
+                    <name>I see "Email is required", "//div[@id="email_help"]/div[@class="ant-form-item-explain-error"]"</name>
+                    <title>I see "Email is required", "//div[@id="email_help"]/div[@class="ant-form-item-explain-error"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1733213227737' status='passed' stop='1733213229503'>
+            <name>Verify the user input empty password field.</name>
+            <title>Verify the user input empty password field.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213227778' status='passed' stop='1733213228310'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228311' status='passed' stop='1733213228318'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228318' status='passed' stop='1733213228320'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228320' status='passed' stop='1733213228321'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228321' status='passed' stop='1733213228322'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228322' status='passed' stop='1733213228732'>
+                    <name>I fill field "//input[@id="email"]", "superadmin@skinx.app"</name>
+                    <title>I fill field "//input[@id="email"]", "superadmin@skinx.app"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228732' status='passed' stop='1733213228887'>
+                    <name>I fill field "//input[@id="password"]", </name>
+                    <title>I fill field "//input[@id="password"]", </title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213228888' status='passed' stop='1733213229039'>
+                    <name>I click "//button[@type="submit"]"</name>
+                    <title>I click "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213229039' status='passed' stop='1733213229503'>
+                    <name>I see "Password is required", "//div[@id="password_help"]/div[@class="ant-form-item-explain-error"]"</name>
+                    <title>I see "Password is required", "//div[@id="password_help"]/div[@class="ant-form-item-explain-error"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1733213229510' status='passed' stop='1733213230729'>
+            <name>Verify the user input invalid email format.</name>
+            <title>Verify the user input invalid email format.</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1733213229553' status='passed' stop='1733213230103'>
+                    <name>I am on page "https://backoffice.alpha.telesmartcare.com/login"</name>
+                    <title>I am on page "https://backoffice.alpha.telesmartcare.com/login"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230104' status='passed' stop='1733213230108'>
+                    <name>I see "Email", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Email", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230109' status='passed' stop='1733213230111'>
+                    <name>I see "Password", "//label[@class="ant-form-item-required"]"</name>
+                    <title>I see "Password", "//label[@class="ant-form-item-required"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230111' status='passed' stop='1733213230113'>
+                    <name>I see "Sign in", "//button[@type="submit"]"</name>
+                    <title>I see "Sign in", "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230113' status='passed' stop='1733213230114'>
+                    <name>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</name>
+                    <title>I see "TSC Back Office", "//span[@class="ant-typography css-1hk5pw4"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230114' status='passed' stop='1733213230327'>
+                    <name>I fill field "//input[@id="email"]", "XXX.#DD"</name>
+                    <title>I fill field "//input[@id="email"]", "XXX.#DD"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230327' status='passed' stop='1733213230580'>
+                    <name>I fill field "//input[@id="password"]", "whitedog"</name>
+                    <title>I fill field "//input[@id="password"]", "whitedog"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230580' status='passed' stop='1733213230726'>
+                    <name>I click "//button[@type="submit"]"</name>
+                    <title>I click "//button[@type="submit"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1733213230726' status='passed' stop='1733213230729'>
+                    <name>I see "Invalid email address", "//div[@id="email_help"]/div[@class="ant-form-item-explain-error"]"</name>
+                    <title>I see "Invalid email address", "//div[@id="email_help"]/div[@class="ant-form-item-explain-error"]"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
