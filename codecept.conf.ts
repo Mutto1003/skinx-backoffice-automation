@@ -5,7 +5,9 @@ import {
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
-require('dotenv').config({ path: `./env/.env.${process.env.NODE_ENV}` });
+require('dotenv').config({
+  path: `./env/.env.${process.env.NODE_ENV}`
+});
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
 setCommonPlugins();
@@ -26,12 +28,14 @@ export const config: CodeceptJS.MainConfig = {
     Playwright: {
       browser: 'chromium',
       url: process.env.BASE_URL,
-      show: true
+      show: true,
+      restart: false
     }
   },
   include: {
     I: './steps_file',
     loginPage: "./pages/loginPage.ts",
+    apptInfoPagePage: "./pages/apptInfoPage.ts",
   },
   name: 'tsc-backoffice-automation'
 }

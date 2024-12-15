@@ -1,0 +1,82 @@
+{
+  "testSuite": {
+    "name": "Login SX Back Office",
+    "version": "1.0.0",
+    "createdAt": "2024-12-13",
+    "environment": "staging",
+    "testCases": {
+      "successLongin": {
+        "scenario": "Verify the user is successfully logged in and can access the application.",
+        "input": {
+          "username": "superAdmin@skinx.app",
+          "password": "whitedog"
+        },
+        "expectedOutput": {
+          "status": "success",
+          "userRole": "admin",
+          "accessLevel": "full"
+        }
+      },
+      "invalidEmail": {
+        "scenario": "Verify the user input invalid email field.",
+        "input": {
+          "username": "panithan@skinx.app",
+          "password": "whitedog"
+        },
+        "expectedOutput": {
+          "status": "success",
+          "userRole": "admin",
+          "accessLevel": "full"
+        }
+      },
+      "invalidPassword": {
+        "scenario": "Verify the user input invalid password field.",
+        "input": {
+          "username": "superAdmin@skinx.app",
+          "password": "invalidPassword"
+        },
+        "expectedOutput": {
+          "status": "success",
+          "userRole": "admin",
+          "accessLevel": "full"
+        }
+      },
+      "emptyEmail": {
+        "scenario": "Verify the user input empty email field.",
+        "input": {
+          "username": "",
+          "password": "whitedog"
+        },
+        "expectedOutput": {
+          "status": "success",
+          "userRole": "admin",
+          "accessLevel": "full"
+        }
+      },
+      "emptyPassword": {
+        "scenario": "Verify the user input empty password field.",
+        "input": {
+          "username": "superAdmin@skinx.app",
+          "password": ""
+        },
+        "expectedOutput": {
+          "status": "success",
+          "userRole": "admin",
+          "accessLevel": "full"
+        }
+      },
+      "invalidEmailFormat": {
+        "scenario": "Verify the user input invalid email format.",
+        "input": {
+          "username": "XXX.#DD",
+          "password": "whitedog"
+        },
+        "expectedOutput": {
+          "status": "success",
+          "userRole": "admin",
+          "accessLevel": "full"
+        }
+      }
+    }
+  }
+}

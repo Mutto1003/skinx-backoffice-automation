@@ -35,4 +35,4 @@ google-services.json
 node_modules
 allure-results
 allure-report
-png
+*.png

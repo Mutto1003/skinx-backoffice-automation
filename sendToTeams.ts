@@ -79,7 +79,7 @@ async function sendTeamsMessage(webhookUrl: string | URL | Request, failedSuites
             body: [
               {
                 type: "TextBlock",
-                text: "*CodeceptJS Test Report*",
+                text: "*SkinX-Backoffice Test Report*",
                 weight: "Bolder",
                 size: "Medium"
               },

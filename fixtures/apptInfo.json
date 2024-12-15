@@ -1,0 +1,103 @@
+{
+  "testSuite": {
+    "name": "Telemed: Appt. Info",
+    "version": "1.0.0",
+    "createdAt": "2024-12-13",
+    "menuTitle": "Telemed",
+    "subMenu": "Appt. Info",
+    "environment": "staging",
+    "testCases": {
+      "displayDefault": {
+        "scenario": "Verify the display default of the appointment info page.",
+        "searchType": null,
+        "collapse": false,
+        "input": {
+          "doctorName": "test empty",
+          "patientName": null,
+          "apptStatus": null,
+          "consulStatus": null,
+          "apptStartDate": null,
+          "apptEndDate": null
+        },
+        "expectedOutput": {
+          "collapseStatus": false,
+          "message": null
+        }
+      },
+
+      "doctorInfoMissing": {
+        "scenario": "Verify the doctor search is not in the database.",
+        "searchType":"Doctor",
+        "collapse": false,
+        "input": {
+          "doctorName": "test empty",
+          "patientName": null,
+          "apptStatus": null,
+          "consulStatus": null,
+          "apptStartDate": null,
+          "apptEndDate": null
+        },
+        "expectedOutput": {
+          "collapseStatus": false,
+          "message": "Sorry, it seems we haven't found what you need."
+        }
+      },
+
+      "doctorInfoComplete": {
+        "scenario": "Verify the doctor search is not in the database.",
+        "searchType":"Doctor",
+        "collapse": false,
+        "input": {
+          "doctorName": "Jane Doe",
+          "patientName": null,
+          "apptStatus": null,
+          "consulStatus": null,
+          "apptStartDate": null,
+          "apptEndDate": null
+        },
+        "expectedOutput": {
+          "collapseStatus": false,
+          "doctorName": "Ms. Jane Doe",
+          "message": "Sorry, it seems we haven't found what you need."
+        }
+      },
+
+      "patientInfoMissing": {
+        "scenario": "Verify the doctor search is not in the database.",
+        "searchType":"Patient",
+        "collapse": false,
+        "input": {
+          "doctorName": null,
+          "patientName": "test empty",
+          "apptStatus": null,
+          "consulStatus": null,
+          "apptStartDate": null,
+          "apptEndDate": null
+        },
+        "expectedOutput": {
+          "collapseStatus": false,
+          "message": "Sorry, it seems we haven't found what you need."
+        }
+      },
+
+      "patientInfoComplete": {
+        "scenario": "Verify the doctor search is not in the database.",
+        "searchType":"Patient",
+        "collapse": false,
+        "input": {
+          "doctorName": null,
+          "patientName": "Casey Samit",
+          "apptStatus": null,
+          "consulStatus": null,
+          "apptStartDate": null,
+          "apptEndDate": null
+        },
+        "expectedOutput": {
+          "collapseStatus": false,
+          "patientName": "Casey Samit",
+          "message": "Sorry, it seems we haven't found what you need."
+        }
+      }
+    }
+  }
+}

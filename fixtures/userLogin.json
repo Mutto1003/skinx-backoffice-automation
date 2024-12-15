@@ -1,9 +1,4 @@
 {
   "username": "superAdmin@skinx.app",
-  "password": "whitedog",
-  "invalidUser": "Panithan@mail.com",
-  "invalidPass": "1234",
-  "emptyUser": "",
-  "emptyPass": "",
-  "invalidFormatEmail": "XXX.#DD"
+  "password": "whitedog"
 }
