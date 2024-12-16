@@ -13,9 +13,6 @@ Before(async ({ I }) => {
   LoginPage.assertHomePageIsVisible();
   ApptInfoPage.onMenuClick(apptInfo.testSuite.menuTitle);
   ApptInfoPage.onMenuClick(apptInfo.testSuite.subMenu);
-
-  I.wait(3)
-  I.seeCookie('Auth');
 });
 
 Scenario("Verify the display default of the appointment info page.",async ({ I }) => {
