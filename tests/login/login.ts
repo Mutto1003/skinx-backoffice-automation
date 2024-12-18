@@ -67,5 +67,5 @@ Scenario("Verify the user input invalid email format.", ({ I }) => {
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(email, password);
   LoginPage.assertRequiredFieldIsVisible("Invalid Email");
-  console.log("test");
+  console.log("test-2");
 });
