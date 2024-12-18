@@ -5,6 +5,9 @@ import {
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
+require('dotenv').config({
+  path: `./env/.env.${process.env.NODE_ENV}`
+});
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
 setCommonPlugins();
@@ -16,21 +19,31 @@ export const config: CodeceptJS.MainConfig = {
       enabled: true,
       require: "allure-codeceptjs",
       resultsDir: "./allure-results",
-      disableWebdriverStepsReporting: false, // ปิดการนับผลลัพธ์ซ้ำ
+      disableWebdriverStepsReporting: false,
       disableWebdriverScreenshotsReporting: false
     },
+    pauseOnFail: {},
+    retryFailedStep: {
+      enabled: true,
+      retries: 2,
+    }
   },
   output: './output',
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'http://localhost',
-      show: false
+      url: process.env.BASE_URL,
+      show: false,
+      restart: false,
+      keepBrowserState: true,
+      keepCookies: true,
+      waitForTimeout: 100000,
     }
   },
   include: {
     I: './steps_file',
     loginPage: "./pages/loginPage.ts",
+    apptInfoPagePage: "./pages/apptInfoPage.ts",
   },
   name: 'tsc-backoffice-automation'
 }

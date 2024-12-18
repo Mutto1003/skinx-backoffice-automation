@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "e2e": "npx codeceptjs run ./tests/login.ts",
-    "genreport": "npx codeceptjs run \"tests/login/*.ts\" --plugins allure",
-    "output": "allure serve output"
+    "telemed": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\"",
+    "genreport": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\" --plugins allure",
+    "output": "allure serve allure-results",
+    "sendToTeams": "ts-node sendToTeams.ts",
+    "Parallel": "NODE_ENV=dev npx codeceptjs run-workers 2 \"tests/telemed/*.ts\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "playwright": "^1.49.0",
     "prettier": "^3.3.3"
   },

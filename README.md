@@ -4,7 +4,8 @@
 - npm init --yes
 - npm install codeceptjs playwright --save or npm install codeceptjs playwright prettier --save
 - npx codeceptjs init
-- npm install --save-dev codeceptjs allure-codeceptjs 
+- npm install --save-dev codeceptjs allure-codeceptjs
+- npm install dotenv --save
 
 ## Creating a new page object
 - npx codeceptjs gpo
