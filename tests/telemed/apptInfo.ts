@@ -17,7 +17,7 @@ Before(async ({ I }) => {
 });
 
 After(async ({ I }) => {
-  console.log("Test001")
+  console.log("Test002")
   I.wait(waitForTimeout)
 });
 
