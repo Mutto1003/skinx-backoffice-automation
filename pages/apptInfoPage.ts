@@ -62,6 +62,9 @@ export class apptInfoPagePage {
     I.seeElement(this.doctorInput);
     I.seeElement(this.patientInput);
     I.seeElement(this.appointmentSelect);
+    "apptCalendarPage"
+    "createAppt"
+    "editAppt"
   }
 
   async onMenuClick(menuItem: string) {

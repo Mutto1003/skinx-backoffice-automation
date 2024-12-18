@@ -3,6 +3,7 @@ import ApptInfoPage from "../../pages/apptInfoPage";
 
 let userLogin = require("../../fixtures/userLogin");
 let apptInfo = require("../../fixtures/apptInfo");
+const waitForTimeout = 8
 
 Feature("Telemed: Appt. Info");
 
@@ -13,6 +14,10 @@ Before(async ({ I }) => {
   LoginPage.assertHomePageIsVisible();
   ApptInfoPage.onMenuClick(apptInfo.testSuite.menuTitle);
   ApptInfoPage.onMenuClick(apptInfo.testSuite.subMenu);
+});
+
+After(async ({ I }) => {
+  I.wait(waitForTimeout)
 });
 
 Scenario("Verify the display default of the appointment info page.",async ({ I }) => {
@@ -56,6 +61,7 @@ Scenario("Verify the patient search is in the database.", async({ I }) => {
 });
 
 Scenario("Verify the default appointment status selected.", async({ I }) => {
+  I.waitForElement(ApptInfoPage.appointmentSelect, 3)
   I.see('Show All', ApptInfoPage.appointmentSelect)
 });
 

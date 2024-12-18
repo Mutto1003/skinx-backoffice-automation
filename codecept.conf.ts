@@ -19,17 +19,25 @@ export const config: CodeceptJS.MainConfig = {
       enabled: true,
       require: "allure-codeceptjs",
       resultsDir: "./allure-results",
-      disableWebdriverStepsReporting: false, // ปิดการนับผลลัพธ์ซ้ำ
+      disableWebdriverStepsReporting: false,
       disableWebdriverScreenshotsReporting: false
     },
+    pauseOnFail: {},
+    retryFailedStep: {
+      enabled: true,
+      retries: 2,
+    }
   },
   output: './output',
   helpers: {
     Playwright: {
       browser: 'chromium',
       url: process.env.BASE_URL,
-      show: true,
-      restart: false
+      show: false,
+      restart: false,
+      keepBrowserState: true,
+      keepCookies: true,
+      waitForTimeout: 100000,
     }
   },
   include: {

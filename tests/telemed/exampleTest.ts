@@ -4,11 +4,19 @@ import { assert } from "console";
 
 let userLogin = require("../../fixtures/userLogin");
 let apptInfo = require("../../fixtures/apptInfo");
+const waitForTimeout = 8
 
 Feature('Run multiple cases without closing browser');
 
-Scenario('Case 1: example login', async ({ I }) => {
+Before(async ({ I }) => {
   I.amOnPage("/login");
+});
+
+After(async ({ I }) => {
+  I.wait(waitForTimeout)
+});
+
+Scenario('Case 1: example login', async ({ I }) => {
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -18,7 +26,6 @@ Scenario('Case 1: example login', async ({ I }) => {
 });
 
 Scenario('Case 2: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -27,7 +34,6 @@ Scenario('Case 2: example login', async ({ I }) => {
 });
 
 Scenario('Case 3: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -36,7 +42,6 @@ Scenario('Case 3: example login', async ({ I }) => {
 });
 
 Scenario('Case 4: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -45,7 +50,6 @@ Scenario('Case 4: example login', async ({ I }) => {
 });
 
 Scenario('Case 5: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -54,7 +58,6 @@ Scenario('Case 5: example login', async ({ I }) => {
 });
 
 Scenario('Case 6: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -63,7 +66,6 @@ Scenario('Case 6: example login', async ({ I }) => {
 });
 
 Scenario('Case 7: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -72,7 +74,6 @@ Scenario('Case 7: example login', async ({ I }) => {
 });
 
 Scenario('Case 8: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -81,7 +82,6 @@ Scenario('Case 8: example login', async ({ I }) => {
 });
 
 Scenario('Case 9: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -90,7 +90,6 @@ Scenario('Case 9: example login', async ({ I }) => {
 });
 
 Scenario('Case 10: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
@@ -99,7 +98,6 @@ Scenario('Case 10: example login', async ({ I }) => {
 });
 
 Scenario('Case 11: example login', async ({ I }) => {
-  I.amOnPage("/login");
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();

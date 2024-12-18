@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "e2e": "npx codeceptjs run ./tests/login.ts",
     "telemed": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\"",
-    "genreport": "NODE_ENV=dev npx codeceptjs run \"tests/**/apptInfo.ts\" --plugins allure",
-    "output": "allure serve output",
-    "sendToTeams": "ts-node sendToTeams.ts"
+    "genreport": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\" --plugins allure",
+    "output": "allure serve allure-results",
+    "sendToTeams": "ts-node sendToTeams.ts",
+    "Parallel": "NODE_ENV=dev npx codeceptjs run-workers 2 \"tests/telemed/*.ts\""
   },
   "keywords": [],
   "author": "",
