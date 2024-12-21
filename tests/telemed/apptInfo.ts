@@ -3,7 +3,7 @@ import ApptInfoPage from "../../pages/apptInfoPage";
 
 let userLogin = require("../../fixtures/userLogin");
 let apptInfo = require("../../fixtures/apptInfo");
-const waitForTimeout = 8
+const waitForTimeout = 10
 
 Feature("Telemed: Appt. Info");
 
@@ -17,7 +17,6 @@ Before(async ({ I }) => {
 });
 
 After(async ({ I }) => {
-  console.log("Test010")
   I.wait(waitForTimeout)
 });
 

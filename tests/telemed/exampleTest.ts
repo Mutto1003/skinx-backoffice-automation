@@ -4,7 +4,7 @@ import { assert } from "console";
 
 let userLogin = require("../../fixtures/userLogin");
 let apptInfo = require("../../fixtures/apptInfo");
-const waitForTimeout = 8
+const waitForTimeout = 10
 
 Feature('Run multiple cases without closing browser');
 
