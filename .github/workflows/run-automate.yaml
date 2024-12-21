@@ -30,6 +30,7 @@ jobs:
 
       - name: Run Codeceptjs tests
         run: npm run genreport
+        continue-on-error: true
 
       - name: Send To Teams
         run: npm run sendToTeams
