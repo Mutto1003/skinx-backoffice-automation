@@ -1,8 +1,8 @@
 name: SkinX - Run Test
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types:
+      - run-tests
 
 jobs:
   run-tag-name:
