@@ -1,13 +1,7 @@
-name: "Run Tests on Tag Update"
-
-# on:
-#   repository_dispatch:
-#     types:
-#       - run-tests
+name: SkinX - Test
 
 on:
-  pull_request:
-    types: [opened, ready_for_review]
+  push:
     branches:
       - main
 
