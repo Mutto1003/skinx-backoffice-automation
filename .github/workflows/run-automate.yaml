@@ -1,4 +1,4 @@
-name: SkinX - CI
+name: SkinX - Run Test
 on:
   pull_request:
     types: [opened, ready_for_review]
