@@ -1,8 +1,15 @@
 name: "Run Tests on Tag Update"
+
+# on:
+#   repository_dispatch:
+#     types:
+#       - run-tests
+
 on:
-  repository_dispatch:
-    types:
-      - run-tests
+  pull_request:
+    types: [opened, ready_for_review]
+    branches:
+      - main
 
 jobs:
   test:
