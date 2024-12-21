@@ -11,4 +11,4 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Display Tag Received
-      run: echo "Running tests for TAG: ${{ github.event.client_payload.tag }}"
+        run: echo "Running tests for TAG: ${{ github.event.client_payload.tag }}"
