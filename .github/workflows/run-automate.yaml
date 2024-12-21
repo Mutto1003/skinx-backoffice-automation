@@ -1,9 +1,8 @@
 name: SkinX - Run Test
 on:
-  pull_request:
-    types: [opened, ready_for_review]
-    branches:
-      - main
+  repository_dispatch:
+    types:
+      - run-tests
 
 jobs:
   check-pr-name:
