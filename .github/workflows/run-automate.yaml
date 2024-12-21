@@ -16,3 +16,20 @@ jobs:
           echo "Event: ${{ github.event_name }}"
           echo "Event Type: ${{ github.event.action }}"
           echo "Payload: ${{ toJson(github.event.client_payload) }}"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install CodeceptJs + Playwright
+        run: npm install codeceptjs playwright --save  genreport
+
+      - name: Run Codeceptjs tests
+        run: npm run genreport
+
+      - name: Send To Teams
+        run: npm run sendToTeams
