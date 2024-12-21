@@ -1,4 +1,4 @@
-name: Run Tests on Tag Update
+name: "Run Tests on Tag Update"
 on:
   repository_dispatch:
     types:
