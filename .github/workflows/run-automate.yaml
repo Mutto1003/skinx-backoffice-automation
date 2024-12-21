@@ -26,9 +26,7 @@ jobs:
         run: npm install
 
       - name: Install CodeceptJs + Playwright
-        run: |
-          npm install codeceptjs playwright --save
-          npx playwright install
+        run:  npx playwright install
 
       - name: Run Codeceptjs tests
         run: npm run genreport
