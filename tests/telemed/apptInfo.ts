@@ -9,7 +9,7 @@ Feature("Telemed: Appt. Info");
 
 Before(async ({ I }) => {
   I.amOnPage("/login");
-  I.wait(waitForTimeout)
+  // I.wait(waitForTimeout)
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();

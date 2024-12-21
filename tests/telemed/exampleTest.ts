@@ -10,7 +10,7 @@ Feature('Run multiple cases without closing browser');
 
 Before(async ({ I }) => {
   I.amOnPage("/login");
-  I.wait(waitForTimeout)
+  // I.wait(waitForTimeout)
 });
 
 After(async ({ I }) => {

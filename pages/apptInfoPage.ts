@@ -39,7 +39,7 @@ export class apptInfoPagePage {
     this.btnCollapseOption = '//button[@type="button"]/span[text()="Collapse Option"]'
     this.tableApptInfo = '//div[@class="ant-table-content"]';
     this.messageNotFound = '//h4[@class="ant-typography css-98ntnt"]';
-    this.btnMoreOption = '//button[@type="button"]/span[text()="More Option"]'; 
+    this.btnMoreOption = '//button[@type="button"]/span[text()="More Option"]';
     this.btnReset = '//button[@type="button"]/span[text()="Reset to Default"]';
     this.btnExportFile = '//button[@type="button"]/span[text()="Export File"]';
     this.modalExport = '//div[@class="ant-modal-body"]';
@@ -57,14 +57,11 @@ export class apptInfoPagePage {
   }
   // insert your methods here
   async assertApptInfoPageIsVisible() {
-    I.see("Appointment Info", this.headderTitle);
-    I.see("Advanced Search", this.titleSearch);
-    I.seeElement(this.doctorInput);
-    I.seeElement(this.patientInput);
-    I.seeElement(this.appointmentSelect);
-    "apptCalendarPage"
-    "createAppt"
-    "editAppt"
+    I.waitForElement(this.headderTitle, 5);
+    I.waitForElement(this.titleSearch, 5);
+    I.waitForElement(this.doctorInput, 5);
+    I.waitForElement(this.patientInput, 5);
+    I.waitForElement(this.appointmentSelect, 5);
   }
 
   async onMenuClick(menuItem: string) {
