@@ -1,11 +1,11 @@
 name: SkinX - Run Test
 on:
-  repository_dispatch:
-    types:
-      - run-tests
+  push:
+    branches:
+      - main
 
 jobs:
-  check-pr-name:
+  run-tag-name:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
