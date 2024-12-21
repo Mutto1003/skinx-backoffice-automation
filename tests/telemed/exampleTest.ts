@@ -4,12 +4,13 @@ import { assert } from "console";
 
 let userLogin = require("../../fixtures/userLogin");
 let apptInfo = require("../../fixtures/apptInfo");
-const waitForTimeout = 20
+const waitForTimeout = 10
 
 Feature('Run multiple cases without closing browser');
 
 Before(async ({ I }) => {
   I.amOnPage("/login");
+  I.wait(waitForTimeout)
 });
 
 After(async ({ I }) => {

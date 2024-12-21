@@ -3,12 +3,13 @@ import ApptInfoPage from "../../pages/apptInfoPage";
 
 let userLogin = require("../../fixtures/userLogin");
 let apptInfo = require("../../fixtures/apptInfo");
-const waitForTimeout = 20
+const waitForTimeout = 10
 
 Feature("Telemed: Appt. Info");
 
 Before(async ({ I }) => {
   I.amOnPage("/login");
+  I.wait(waitForTimeout)
   LoginPage.assertLoginFromIsVisible();
   LoginPage.submitLogin(userLogin.username, userLogin.password);
   LoginPage.assertHomePageIsVisible();
