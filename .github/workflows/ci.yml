@@ -1,1 +1,37 @@
+name: SkinX - CI
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+    branches:
+      - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-pr-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Get PR details
+        id: pr-details
+        run: |
+          echo "PR title: ${{ github.event.pull_request.title }}"
+          echo "Source branch: ${{ github.event.pull_request.head.ref }}"
+      - name: Check PR title and source branch
+        id: check-title
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          SOURCE_BRANCH="${{ github.event.pull_request.head.ref }}"
+
+          if [[ "$PR_TITLE" =~ ^sprint-[0-9]+/(feature|fix)/[a-z0-9_-]+$ ]]; then
+            echo "PR title matches sprint feature/fix pattern."
+          elif [[ "$PR_TITLE" =~ ^hotfix/[a-z0-9_-]+$ ]]; then
+            echo "PR title matches hotfix pattern."
+          else
+            echo "Invalid PR title: $PR_TITLE"
+            echo "::error::Pull request title does not match the required pattern: sprint-{X}/feature/{XXXXX}, sprint-{X}/fix/{XXXXX}, hotfix"
+            exit 1
+          fi
