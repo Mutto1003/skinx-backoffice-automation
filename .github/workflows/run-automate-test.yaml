@@ -1,4 +1,4 @@
-name: "SkinX - Run Test"
+name: SkinX - Run Test
 on:
   push:
     branches:
