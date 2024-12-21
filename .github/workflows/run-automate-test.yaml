@@ -7,10 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
     - name: Display Tag Received
       run: echo "Running tests for TAG: ${{ github.event.client_payload.tag }}"
