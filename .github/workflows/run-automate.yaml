@@ -14,4 +14,4 @@ jobs:
         run: |
           echo "Event: ${{ github.event_name }}"
           echo "Event Type: ${{ github.event.action }}"
-          echo "Payload: ${{ toJson(github.event.client_payload) }}"
+          echo "Payload: ${{ github.event.client_payload }}"
