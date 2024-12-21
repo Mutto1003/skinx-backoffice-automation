@@ -13,6 +13,7 @@ Before(async ({ I }) => {
 });
 
 After(async ({ I }) => {
+  console.log("Test")
   I.wait(waitForTimeout)
 });
 
