@@ -2,7 +2,7 @@ name: SkinX - Run Test
 on:
   repository_dispatch:
     types:
-      - run-tests
+      - run-*
 
 jobs:
   run-tag-name:
@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
+
       - name: Debug Event Payload
         run: |
           echo "Event: ${{ github.event_name }}"
