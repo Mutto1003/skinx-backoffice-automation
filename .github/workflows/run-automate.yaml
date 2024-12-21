@@ -1,5 +1,4 @@
-name: SkinX - Test
-
+name: SkinX - TEST
 on:
   push:
     branches:
