@@ -12,60 +12,51 @@ Before(async ({ I }) => {
 Scenario(
   "Verify that the login screen is displayed with fields for email and password.",
   ({ I }) => {
-    // const title = await I.grabTextFrom('//span[contains(@class, "ant-typography") and contains(@class, "css-1hk5pw4")]');
-    // const title = await I.grabTextFrom('//span[@class="ant-typography css-1hk5pw4"]');
-    LoginPage.assertLoginFromIsVisible();
+    LoginPage.assertLoginFormIsVisible();
   }
 );
 
 Scenario(
   "Verify the user is successfully logged in and can access the application.",
   ({ I }) => {
-    const email = userLogin.testSuite.testCases.successLongin.input.username
-    const password = userLogin.testSuite.testCases.successLongin.input.password
-    LoginPage.assertLoginFromIsVisible();
-    LoginPage.submitLogin(email, password);
+    const loginInput = userLogin.testSuite.testCases.successLongin.input
+    LoginPage.assertLoginFormIsVisible();
+    LoginPage.submitLogin(loginInput.username, loginInput.password);
     LoginPage.assertHomePageIsVisible();
   }
 );
 
 Scenario("Verify the user input invalid email field.", ({ I }) => {
-  const email = userLogin.testSuite.testCases.invalidEmail.input.username
-  const password = userLogin.testSuite.testCases.invalidEmail.input.password
-  LoginPage.assertLoginFromIsVisible();
-  LoginPage.submitLogin(email, password);
+  const loginInput = userLogin.testSuite.testCases.invalidEmail.input
+  LoginPage.assertLoginFormIsVisible();
+  LoginPage.submitLogin(loginInput.username, loginInput.password);
   LoginPage.assertInvalidFieldIsVisible();
 });
 
 Scenario("Verify the user input invalid password field.", ({ I }) => {
-  const email = userLogin.testSuite.testCases.invalidPassword.input.username
-  const password = userLogin.testSuite.testCases.invalidPassword.input.password
-  LoginPage.assertLoginFromIsVisible();
-  LoginPage.submitLogin(email, password);
+  const loginInput = userLogin.testSuite.testCases.invalidPassword.input
+  LoginPage.assertLoginFormIsVisible();
+  LoginPage.submitLogin(loginInput.username, loginInput.password);
   LoginPage.assertInvalidFieldIsVisible();
 });
 
 Scenario("Verify the user input empty email field.", ({ I }) => {
-  const email = userLogin.testSuite.testCases.emptyEmail.input.username
-  const password = userLogin.testSuite.testCases.emptyEmail.input.password
-  LoginPage.assertLoginFromIsVisible();
-  LoginPage.submitLogin(email, password);
+  const loginInput = userLogin.testSuite.testCases.emptyEmail.input
+  LoginPage.assertLoginFormIsVisible();
+  LoginPage.submitLogin(loginInput.username, loginInput.password);
   LoginPage.assertRequiredFieldIsVisible("Email");
 });
 
 Scenario("Verify the user input empty password field.", ({ I }) => {
-  const email = userLogin.testSuite.testCases.emptyPassword.input.username
-  const password = userLogin.testSuite.testCases.emptyPassword.input.password
-  LoginPage.assertLoginFromIsVisible();
-  LoginPage.submitLogin(email, password);
+  const loginInput = userLogin.testSuite.testCases.emptyPassword.input
+  LoginPage.assertLoginFormIsVisible();
+  LoginPage.submitLogin(loginInput.username, loginInput.password);
   LoginPage.assertRequiredFieldIsVisible("Password");
 });
 
 Scenario("Verify the user input invalid email format.", ({ I }) => {
-  const email = userLogin.testSuite.testCases.invalidEmailFormat.input.username
-  const password = userLogin.testSuite.testCases.invalidEmailFormat.input.password
-  LoginPage.assertLoginFromIsVisible();
-  LoginPage.submitLogin(email, password);
-  LoginPage.assertRequiredFieldIsVisible("Invalid Email");
-  console.log("test");
+  const loginInput = userLogin.testSuite.testCases.invalidEmailFormat.input
+  LoginPage.assertLoginFormIsVisible();
+  LoginPage.submitLogin(loginInput.username, loginInput.password);
+  LoginPage.assertRequiredFieldIsVisible("InvalidEmail");
 });

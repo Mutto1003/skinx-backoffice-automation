@@ -1,81 +1,78 @@
 const { I } = inject();
 
 export class apptInfoPagePage {
-  headderTitle: string;
-  titleSearch: string;
+  headerTitle: string;
+  searchTitle: string;
   doctorInput: string;
   patientInput: string;
-  appointmentSelect: string;
-  conSultSelect: string;
-  consultationSelect: string;
-  appointmentDate: string;
-  btnExportFile: string;
-  tableApptInfo: string;
-  messageNotFound: string;
-  btnMoreOption: string;
-  btnCollapseOption: string;
-  btnReset: string;
-  modalExport: string;
-  btnModalCancel: string;
-  btnModalClose: string;
-  btnRowPage: string;
-  optionRowPage: string;
+  apptSelect: string;
+  consultSelect: string;
+  consultTypeSelect: string;
+  apptDatePicker: string;
+  exportBtn: string;
+  apptInfoTable: string;
+  notFoundMsg: string;
+  moreOptionsBtn: string;
+  collapseOptionsBtn: string;
+  resetBtn: string;
+  exportModal: string;
+  cancelModalBtn: string;
+  closeModalBtn: string;
+  rowsPerPageBtn: string;
+  rowsPerPageOpt: string;
   dataTable: string;
-  btnPrevPage: string;
-  btnNextPage: string;
-  btnClearText: string;
-  searchRowPage: string;
-  appointmentAt: string;
-  appointmentEnd: string;
+  prevPageBtn: string;
+  nextPageBtn: string;
+  clearTextBtn: string;
+  searchPageRows: string;
+  apptStart: string;
+  apptEnd: string;
 
   constructor() {
     //insert your locators
-    this.headderTitle = '//span[@class="ant-page-header-heading-title"]//*[normalize-space(text())="Appointment Info"]';
-    this.titleSearch = '//h4[@class="ant-typography css-1ulwx50" and normalize-space(text())="Advanced Search"]';
+    this.headerTitle = '//span[@class="ant-page-header-heading-title"]//*[normalize-space(text())="Appointment Info"]';
+    this.searchTitle = '//h4[@class="ant-typography css-1ulwx50" and normalize-space(text())="Advanced Search"]';
     this.doctorInput = '//input[@placeholder="Search a Doctor" and @type="search"]';
     this.patientInput = '//input[@placeholder="Search a Patient" and @type="search"]';
-    this.appointmentSelect = '//div/div/label[text()="Appointment Status"]/../..//span[@title="Show All"]';
-    this.conSultSelect = '//div/div/label[text()="Consultation Status"]/../..//span[@title="Show All"]';
-    this.btnCollapseOption = '//button[@type="button"]/span[text()="Collapse Option"]'
-    this.tableApptInfo = '//div[@class="ant-table-content"]';
-    this.messageNotFound = '//h4[@class="ant-typography css-98ntnt"]';
-    this.btnMoreOption = '//button[@type="button"]/span[text()="More Option"]';
-    this.btnReset = '//button[@type="button"]/span[text()="Reset to Default"]';
-    this.btnExportFile = '//button[@type="button"]/span[text()="Export File"]';
-    this.modalExport = '//div[@class="ant-modal-body"]';
-    this.btnModalCancel = '//button[@type="button"]/span[text()="Cancel"]';
-    this.btnModalClose = '//button[@type="button" and @class="ant-modal-close"]';
-    this.btnRowPage = '//li[@class="ant-pagination-options"]'
-    this.optionRowPage= '//div[@class="rc-virtual-list-holder-inner"]';
+    this.apptSelect = '//div/div/label[text()="Appointment Status"]/../..//span[@title="Show All"]';
+    this.consultSelect = '//div/div/label[text()="Consultation Status"]/../..//span[@title="Show All"]';
+    this.collapseOptionsBtn = '//button[@type="button"]/span[text()="Collapse Option"]'
+    this.apptInfoTable = '//div[@class="ant-table-content"]';
+    this.notFoundMsg = '//h4[@class="ant-typography css-98ntnt"]';
+    this.moreOptionsBtn = '//button[@type="button"]/span[text()="More Option"]';
+    this.resetBtn = '//button[@type="button"]/span[text()="Reset to Default"]';
+    this.exportBtn = '//button[@type="button"]/span[text()="Export File"]';
+    this.exportModal = '//div[@class="ant-modal-body"]';
+    this.cancelModalBtn = '//button[@type="button"]/span[text()="Cancel"]';
+    this.closeModalBtn = '//button[@type="button" and @class="ant-modal-close"]';
+    this.rowsPerPageBtn = '//li[@class="ant-pagination-options"]'
+    this.rowsPerPageOpt= '//div[@class="rc-virtual-list-holder-inner"]';
     this.dataTable = '//tbody//tr[@class="ant-table-row ant-table-row-level-0"]';
-    this.btnPrevPage = '//button[@class="ant-pagination-item-link"]/span[@class="anticon anticon-left"]';
-    this.btnNextPage = '//button[@class="ant-pagination-item-link"]/span[@class="anticon anticon-right"]';
-    this.btnClearText = '//span[@class="anticon anticon-close-circle"]';
-    this.searchRowPage = '//li[@class="ant-pagination-options"]//input[@class="ant-select-selection-search-input"]'
-    this.appointmentAt = '//div//input[@id="appointmentAt"]'
-    this.appointmentEnd = '//div//input[@placeholder="Latest"]'
+    this.prevPageBtn = '//button[@class="ant-pagination-item-link"]/span[@class="anticon anticon-left"]';
+    this.nextPageBtn = '//button[@class="ant-pagination-item-link"]/span[@class="anticon anticon-right"]';
+    this.clearTextBtn = '//span[@class="anticon anticon-close-circle"]';
+    this.searchPageRows = '//li[@class="ant-pagination-options"]//input[@class="ant-select-selection-search-input"]'
+    this.apptStart = '//input[@id="appointmentAt"]'
+    this.apptEnd = '//div//input[@placeholder="Latest"]'
   }
   // insert your methods here
   async assertApptInfoPageIsVisible() {
-    I.waitForElement(this.headderTitle, 5);
-    I.waitForElement(this.titleSearch, 5);
-    I.waitForElement(this.doctorInput, 5);
-    I.waitForElement(this.patientInput, 5);
-    I.waitForElement(this.appointmentSelect, 5);
+    I.waitForElement(this.headerTitle);
+    I.waitForElement(this.searchTitle);
+    I.waitForElement(this.doctorInput);
+    I.waitForElement(this.patientInput);
+    I.waitForElement(this.apptSelect);
   }
 
   async onMenuClick(menuItem: string) {
-    // I.wait()
-    I.waitForElement(`//*[normalize-space(text())="${menuItem}"]`, 30)
-    I.click(`//*[normalize-space(text())="${menuItem}"]`);
+    const menuLocator = `//*[normalize-space(text())="${menuItem}"]`;
+    I.waitForElement(menuLocator, 30);
+    I.click(menuLocator);
   }
 
-  async isSearchResult(searchType: string, name: string) {
-    if (searchType === "Doctor") {
-      I.fillField(this.doctorInput, name);
-    } else {
-      I.fillField(this.patientInput, name);
-    }
+  async isSearchResult(searchType: "Doctor" | "Patient", name: string) {
+    const inputField = searchType === "Doctor" ? this.doctorInput : this.patientInput;
+    I.fillField(inputField, name);
     I.pressKey("Enter");
   }
 
@@ -83,7 +80,7 @@ export class apptInfoPagePage {
     I.wait(3)
     I.see(
       "Sorry, it seems we haven't found what you need.",
-      this.messageNotFound
+      this.notFoundMsg
     );
   }
 
@@ -93,21 +90,24 @@ export class apptInfoPagePage {
     fieldIndex = headers.indexOf(fieldName) + 1;
 
     for (let i = 1; i <= rowCount; i++) {
-      I.waitForElement(`${this.dataTable}[${i}]/td[${fieldIndex}]`, 3)
-      I.see(assertData, `${this.dataTable}[${i}]/td[${fieldIndex}]`);
+      const cellLocator = `${this.dataTable}[${i}]/td[${fieldIndex}]`;
+      I.waitForElement(cellLocator);
+      I.see(assertData, cellLocator);
     }
   }
 
   async getRowCount(){
-    I.waitForElement(`${this.dataTable}`, 3)
-    let rowCount = await I.grabNumberOfVisibleElements(`${this.dataTable}`);
+    I.waitForElement(this.dataTable);
+    const rowCount = await I.grabNumberOfVisibleElements(this.dataTable);
+    return rowCount;
   }
 
   async assertRowsPerPageVisible(rowCountPage: number){
-    I.waitForElement(`${this.optionRowPage}/div[@role="option" and @title="${rowCountPage} / page"]`, 3)
-    I.click(`${this.optionRowPage}/div[@role="option" and @title="${rowCountPage} / page"]`)
-    I.wait(3)
-    I.waitNumberOfVisibleElements(`${this.dataTable}`, rowCountPage);
+    const rowsPerPageLocator = `${this.rowsPerPageOpt}/div[@role="option" and @title="${rowCountPage} / page"]`;
+    I.waitForElement(rowsPerPageLocator);
+    I.click(rowsPerPageLocator);
+    I.wait(3);
+    I.waitNumberOfVisibleElements(this.dataTable, rowCountPage);
   }
 }
 

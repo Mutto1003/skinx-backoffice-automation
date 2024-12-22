@@ -44,6 +44,8 @@ export const config: CodeceptJS.MainConfig = {
     I: './steps_file',
     loginPage: "./pages/loginPage.ts",
     apptInfoPagePage: "./pages/apptInfoPage.ts",
+
+    examplePagePage: "./pages/examplePage.ts",
   },
   name: 'tsc-backoffice-automation'
 }

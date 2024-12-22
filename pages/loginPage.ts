@@ -1,61 +1,66 @@
+import { Console } from "console";
+
 const { I } = inject();
 
-class loginPage {
-  titleSX: string;
-  lableEmail: string;
-  lablePass: string;
-  btnSingin: string;
-  emailInputField: string;
-  passInputField: string;
-  messageEmailError: string;
-  messagePassError: string;
-  notiErrorMessage: string;
+class LoginPage {
+  // Locators
+  pageTitle: string;
+  emailLabel: string;
+  passwordLabel: string;
+  signInButton: string;
+  emailField: string;
+  passwordField: string;
+  emailErrorMessage: string;
+  passwordErrorMessage: string;
+  toastNotification: string;
 
   constructor() {
-    //insert your locators
-    this.btnSingin = '//button[@type="submit"]';
-    this.titleSX = '//span[@class="ant-typography css-1ulwx50"]';
-    this.lableEmail = '//label[@class="ant-form-item-required"]';
-    this.lablePass = '//label[@class="ant-form-item-required"]';
-    this.emailInputField = '//input[@id="email"]';
-    this.passInputField = '//input[@id="password"]';
-    this.messageEmailError = '//div[@id="email_help"]/div[@class="ant-form-item-explain-error"]';
-    this.messagePassError = '//div[@id="password_help"]/div[@class="ant-form-item-explain-error"]';
-    this.notiErrorMessage = '//div[@role="alert" and @class="Toastify__toast-body"]';
+    // Initialize locators
+    this.signInButton = '//button[@type="submit"]';
+    this.pageTitle = '//span[@class="ant-typography css-1ulwx50"]';
+    this.emailLabel = '//label[@class="ant-form-item-required" and text()="Email"]';
+    this.passwordLabel = '//label[@class="ant-form-item-required" and text()="Password"]';
+    this.emailField = '//input[@id="email"]';
+    this.passwordField = '//input[@id="password"]';
+    this.emailErrorMessage = "//div[@class='ant-form-item-explain-error']"
+    this.passwordErrorMessage = '//div[@id="password_help"]/div[@class="ant-form-item-explain-error"]';
+    this.toastNotification = '//div[@role="alert" and @class="Toastify__toast-body"]';
   }
 
-  // insert your methods here
+  // Methods
   async submitLogin(username: string, password: string) {
-    I.fillField(this.emailInputField, username);
-    I.fillField(this.passInputField, password);
-    I.click(this.btnSingin);
+    I.fillField(this.emailField, username);
+    I.fillField(this.passwordField, password);
+    I.click(this.signInButton);
   }
 
-  async assertLoginFromIsVisible() {
-    I.see("Email", this.lableEmail);
-    I.see("Password", this.lablePass);
-    I.see("Sign in", this.btnSingin);
-    I.see("SX Back Office", this.titleSX);
+  async assertLoginFormIsVisible() {
+    I.see("Email", this.emailLabel);
+    I.see("Password", this.passwordLabel);
+    I.see("Sign in", this.signInButton);
+    I.see("SX Back Office", this.pageTitle);
   }
 
   async assertHomePageIsVisible() {
-    I.see("SX Back Office", this.titleSX);
+    I.see("SX Back Office", this.pageTitle);
   }
 
-  async assertRequiredFieldIsVisible(type: string) {
-    if (type == "Email") {
-      I.see("Email is required", this.messageEmailError);
-    } else if (type == "Password") {
-      I.see("Password is required", this.messagePassError);
-    } else {
-      I.see("Invalid email address", this.messageEmailError);
-    }
+  async assertRequiredFieldIsVisible(field: 'Email' | 'Password' | 'InvalidEmail') {
+    const errorMessageLocator = field === 'Password'
+      ? this.passwordErrorMessage
+      : this.emailErrorMessage;
+
+    const requiredMessage = field === 'InvalidEmail'
+      ? 'Invalid email address'
+      : `${field} is required`;
+
+    I.see(requiredMessage, errorMessageLocator);
   }
 
   async assertInvalidFieldIsVisible() {
-    await I.see("Login Failed. Please try again.", this.notiErrorMessage);
+    I.waitForElement(this.toastNotification)
+    I.see("Login Failed. Please try again.", this.toastNotification);
   }
 }
 
-// For inheritance
-export default new loginPage();
+export default new LoginPage();
