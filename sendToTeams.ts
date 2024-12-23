@@ -12,7 +12,7 @@ function parseAllureResults(resultsPath: string) {
       const data = JSON.parse(
         fs.readFileSync(path.join(resultsPath, file), "utf-8")
       );
-      console.log(data.status)
+
       if (data.fullName) {
         const featureName = data.fullName.split(" > ")[0].split(": ")[1];
         let feature = featureResults.find((f) => f.name === featureName);
