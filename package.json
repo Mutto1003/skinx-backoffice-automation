@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "e2e": "npx codeceptjs run ./tests/login.ts",
-    "telemed": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\"",
+    "test-all": "NODE_ENV=dev npx codeceptjs run \"tests/**/*.ts\"",
+    "test-e2e": "NODE_ENV=dev npx codeceptjs run \"tests/**/*.ts\" --grep e2e",
+    "test-with-tag": "NODE_ENV=dev npx codeceptjs run \"tests/**/*.ts\" --grep apptInfo",
     "genreport": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\" --plugins allure --grep '@apptInfo'",
-    "tag": "NODE_ENV=dev npx codeceptjs run \"tests/**/*.ts\" --grep `@apptInfo`",
     "output": "allure serve allure-results",
-    "sendToTeams": "ts-node sendToTeams.ts",
-    "Parallel": "NODE_ENV=dev npx codeceptjs run-workers 2 \"tests/telemed/*.ts\""
+    "sendToTeams": "ts-node sendToTeams.ts"
   },
   "keywords": [],
   "author": "",
