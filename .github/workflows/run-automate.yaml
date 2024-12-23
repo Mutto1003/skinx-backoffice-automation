@@ -29,7 +29,10 @@ jobs:
         run: npm install
 
       - name: Run Codeceptjs tests
-        run: npm run genreport
+        run: |
+          TAG_NAME=${{ github.event.client_payload.tag }}
+          echo "Running tests with tag: $TAG_NAME"
+          NODE_ENV=dev npx codeceptjs run "tests/**/*.ts" --grep $TAG_NAME
         continue-on-error: true
 
       - name: Send To Teams
