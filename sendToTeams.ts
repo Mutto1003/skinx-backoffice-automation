@@ -123,7 +123,7 @@ async function sendResultToTeams(results: any[], webhookUrl: string) {
     webhookUrl,
     results,
   );
-  clearAllureResults(resultsPath);
+  // clearAllureResults(resultsPath);
 }
 
 sendResultToTeams(results, webhookUrl);

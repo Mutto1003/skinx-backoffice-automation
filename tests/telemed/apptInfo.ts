@@ -41,7 +41,7 @@ Scenario("Verify the doctor search is in the database.",async ({ I }) => {
   ApptInfoPage.isSearchResult(searchType, doctorName);
   const rowCount = ApptInfoPage.getRowCount()
   ApptInfoPage.assertApptDetailsVisible(searchType, expectedDoctorName, rowCount)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the patient search is not in the database.",async ({ I }) => {
   const searchType = apptInfo.testSuite.testCases.patientInfoMissing.searchType;
@@ -49,7 +49,7 @@ Scenario("Verify the patient search is not in the database.",async ({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
   ApptInfoPage.isSearchResult(searchType, patientName);
   ApptInfoPage.assertResultNotFound();
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the patient search is in the database.", async({ I }) => {
   const searchType = apptInfo.testSuite.testCases.patientInfoComplete.searchType;
@@ -59,12 +59,12 @@ Scenario("Verify the patient search is in the database.", async({ I }) => {
   await ApptInfoPage.isSearchResult(searchType, patientName);
   const rowCount = ApptInfoPage.getRowCount()
   await ApptInfoPage.assertApptDetailsVisible(searchType, expectedPatientName, rowCount)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the default appointment status selected.", async({ I }) => {
   I.waitForElement(ApptInfoPage.apptSelect)
   I.see('Show All', ApptInfoPage.apptSelect)
-}).tag('smoke');
+}).tag('apptInfo');
 
 // Scenario("Verify the select appointment status is waiting confirm.", async({ I }) => {
 
@@ -82,7 +82,7 @@ Scenario("Verify the default consultation status selected.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn)
   I.click(ApptInfoPage.moreOptionsBtn)
   I.see('Show All', ApptInfoPage.apptSelect)
-}).tag('smoke');
+}).tag('apptInfo');
 
 // Scenario("Verify the select consultation status is in progress.", async({ I }) => {
 
@@ -112,7 +112,7 @@ Scenario("Verify the functionality button is reset to default.", async({ I }) =>
   I.waitForElement(ApptInfoPage.resetBtn);
   I.click(ApptInfoPage.resetBtn)
   ApptInfoPage.assertApptInfoPageIsVisible();
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the selected start date in the date picker.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn);
@@ -122,7 +122,7 @@ Scenario("Verify the selected start date in the date picker.", async({ I }) => {
   I.click(ApptInfoPage.apptStart)
   I.fillField(ApptInfoPage.apptStart, '1 Dec 2024')
   I.click(ApptInfoPage.searchTitle)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the selected end date in the date picker.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn);
@@ -132,7 +132,7 @@ Scenario("Verify the selected end date in the date picker.", async({ I }) => {
   I.click(ApptInfoPage.apptEnd)
   I.fillField(ApptInfoPage.apptEnd, '1 Dec 2024')
   I.click(ApptInfoPage.searchTitle)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the selected start and end date in the date picker.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn);
@@ -145,7 +145,7 @@ Scenario("Verify the selected start and end date in the date picker.", async({ I
   I.click(ApptInfoPage.apptEnd)
   I.fillField(ApptInfoPage.apptEnd, '30 Dec 2024')
   I.click(ApptInfoPage.searchTitle)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify 35-day range limit.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn);
@@ -158,7 +158,7 @@ Scenario("Verify 35-day range limit.", async({ I }) => {
   I.click(ApptInfoPage.apptEnd)
   I.fillField(ApptInfoPage.apptEnd, '30 Dec 2024')
   I.click(ApptInfoPage.searchTitle)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify Export button behavior.", async({ I }) => {
   const searchType = apptInfo.testSuite.testCases.patientInfoComplete.searchType;
@@ -168,7 +168,7 @@ Scenario("Verify Export button behavior.", async({ I }) => {
   I.waitForElement(ApptInfoPage.exportBtn);
   I.click(ApptInfoPage.exportBtn);
   I.waitForElement(ApptInfoPage.exportModal);
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify cancel button behavior.", async({ I }) => {
   const searchType = apptInfo.testSuite.testCases.patientInfoComplete.searchType;
@@ -180,7 +180,7 @@ Scenario("Verify cancel button behavior.", async({ I }) => {
   I.waitForElement(ApptInfoPage.exportModal);
   I.waitForElement(ApptInfoPage.cancelModalBtn);
   I.click(ApptInfoPage.cancelModalBtn);
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify close button functionality.", async({ I }) => {
   const searchType = apptInfo.testSuite.testCases.patientInfoComplete.searchType;
@@ -192,7 +192,7 @@ Scenario("Verify close button functionality.", async({ I }) => {
   I.waitForElement(ApptInfoPage.exportModal);
   I.waitForElement(ApptInfoPage.closeModalBtn);
   I.click(ApptInfoPage.closeModalBtn);
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the search a empty rows per page of the table.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -202,7 +202,7 @@ Scenario("Verify the search a empty rows per page of the table.", async({ I }) =
   I.fillField(ApptInfoPage.searchPageRows, ' ')
   I.pressKey('Enter');
   I.seeElement('//span[@class="ant-select-selection-item" and text()="10 / page"]')
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the search rows per page of the table.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -212,7 +212,7 @@ Scenario("Verify the search rows per page of the table.", async({ I }) => {
   I.fillField(ApptInfoPage.searchPageRows, '20')
   I.pressKey('Enter');
   I.seeElement('//span[@class="ant-select-selection-item" and text()="20 / page"]')
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the fifty rows per page of the table.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -220,7 +220,7 @@ Scenario("Verify the fifty rows per page of the table.", async({ I }) => {
   I.waitForElement(ApptInfoPage.rowsPerPageBtn)
   I.click(ApptInfoPage.rowsPerPageBtn)
   ApptInfoPage.assertRowsPerPageVisible(50)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the thirty rows per page of the table.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -228,7 +228,7 @@ Scenario("Verify the thirty rows per page of the table.", async({ I }) => {
   I.waitForElement(ApptInfoPage.rowsPerPageBtn)
   I.click(ApptInfoPage.rowsPerPageBtn)
   ApptInfoPage.assertRowsPerPageVisible(30)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the twenty rows per page of the table.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -236,7 +236,7 @@ Scenario("Verify the twenty rows per page of the table.", async({ I }) => {
   I.waitForElement(ApptInfoPage.rowsPerPageBtn)
   I.click(ApptInfoPage.rowsPerPageBtn)
   ApptInfoPage.assertRowsPerPageVisible(20)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the ten rows per page of the table.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -244,7 +244,7 @@ Scenario("Verify the ten rows per page of the table.", async({ I }) => {
   I.waitForElement(ApptInfoPage.rowsPerPageBtn)
   I.click(ApptInfoPage.rowsPerPageBtn)
   ApptInfoPage.assertRowsPerPageVisible(10)
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the click number of the pagination.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -252,7 +252,7 @@ Scenario("Verify the click number of the pagination.", async({ I }) => {
   I.waitForElement('//li[@title="2"]')
   I.click('//li[@title="2"]')
   I.seeElement('//li[@class="ant-pagination-item ant-pagination-item-2 ant-pagination-item-active"]')
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the click prev to page of the pagination.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -262,7 +262,7 @@ Scenario("Verify the click prev to page of the pagination.", async({ I }) => {
   I.waitForElement(ApptInfoPage.prevPageBtn)
   I.click(ApptInfoPage.prevPageBtn)
   I.seeElement('//li[@class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"]')
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the click next to page of the pagination.", async({ I }) => {
   ApptInfoPage.assertApptInfoPageIsVisible();
@@ -270,7 +270,7 @@ Scenario("Verify the click next to page of the pagination.", async({ I }) => {
   I.waitForElement(ApptInfoPage.nextPageBtn)
   I.click(ApptInfoPage.nextPageBtn)
   I.seeElement('//li[@class="ant-pagination-item ant-pagination-item-2 ant-pagination-item-active"]')
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the clear text in the search patient field.", async({ I }) => {
   const searchType = apptInfo.testSuite.testCases.doctorInfoComplete.searchType;
@@ -281,7 +281,7 @@ Scenario("Verify the clear text in the search patient field.", async({ I }) => {
   I.click(ApptInfoPage.clearTextBtn);
   I.pressKey('Enter');
   ApptInfoPage.assertApptInfoPageIsVisible();
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the clear text in the search doctor field.", async({ I }) => {
   const searchType = apptInfo.testSuite.testCases.patientInfoComplete.searchType;
@@ -292,7 +292,7 @@ Scenario("Verify the clear text in the search doctor field.", async({ I }) => {
   I.click(ApptInfoPage.clearTextBtn);
   I.pressKey('Enter');
   ApptInfoPage.assertApptInfoPageIsVisible();
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the click the collapse option.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn);
@@ -300,10 +300,10 @@ Scenario("Verify the click the collapse option.", async({ I }) => {
   I.waitForElement(ApptInfoPage.collapseOptionsBtn);
   I.click(ApptInfoPage.collapseOptionsBtn);
   I.seeElement(ApptInfoPage.moreOptionsBtn);
-}).tag('smoke');
+}).tag('apptInfo');
 
 Scenario("Verify the click the more option.", async({ I }) => {
   I.waitForElement(ApptInfoPage.moreOptionsBtn);
   I.click(ApptInfoPage.moreOptionsBtn);
   I.seeElement(ApptInfoPage.collapseOptionsBtn);
-}).tag('smoke');
+}).tag('apptInfo');
