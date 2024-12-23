@@ -16,7 +16,7 @@ jobs:
           echo "Event: ${{ github.event_name }}"
           echo "Event Type: ${{ github.event.action }}"
           echo "Payload: ${{ toJson(github.event.client_payload) }}"
-          echo "The tag that was pushed is: ${{ github.ref }}"
+          # echo "The tag that was pushed is: ${{ github.ref }}"
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -31,8 +31,8 @@ jobs:
 
       - name: Run Codeceptjs tests
         run: |
-          TAG_NAME_GIT=${GITHUB_REF#refs/tags/}
-          echo "The tag that was pushed is: $TAG_NAME_GIT"
+          # TAG_NAME_GIT=${GITHUB_REF#refs/tags/}
+          # echo "The tag that was pushed is: $TAG_NAME_GIT"
           TAG_NAME=${{ github.event.client_payload.tag }}
           echo "Running tests with tag: $TAG_NAME"
           NODE_ENV=dev npx codeceptjs run "tests/**/*.ts" --grep $TAG_NAME
