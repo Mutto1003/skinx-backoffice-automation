@@ -306,5 +306,5 @@ Scenario("Verify the click the more option.", async({ I }) => {
   I.waitForElement(ApptInfoPage.btnMoreOption, 3);
   I.click(ApptInfoPage.btnMoreOption);
   I.seeElement(ApptInfoPage.btnCollapseOption);
-  console.log('test')
+  console.log('tests')
 });
