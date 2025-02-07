@@ -1,0 +1,10 @@
+name: Manual-Action-Workflow
+on:
+  workflow_dispatch
+
+jobs:
+  run-automation-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
