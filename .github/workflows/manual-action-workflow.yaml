@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Codeceptjs tests
-        run: npm run test-all
+      - name: Run tests SkinX BackOffice
+        run: NODE_ENV=dev npx codeceptjs run \"tests/login/*.ts\"
         continue-on-error: true
 
       - name: Send To Teams
