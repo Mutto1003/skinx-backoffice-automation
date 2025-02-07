@@ -14,11 +14,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install CodeceptJs + Playwright
-        run:  npx playwright install
-
       - name: Install dependencies
         run: npm install
+
+      - name: Install CodeceptJs + Playwright
+      run:  npx playwright install
 
       - name: Run tests SkinX BackOffice
         run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts"
