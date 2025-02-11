@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: "Tag to be used (e.g., v1.0.0)"
+        description: "Tag to be used (e.g., all)"
         required: true
-        default: "v1.0.0"
+        default: "all"
 
 jobs:
   create-tag:
@@ -19,10 +19,10 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
+      - name: Authenticate with PAT
+        run: git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
+
       - name: Create & Push Tag
         run: |
           git tag ${{ github.event.inputs.tag_name }}
           git push origin ${{ github.event.inputs.tag_name }}
-
-      - name: Output Tag
-        run: echo "TAG_NAME=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV
