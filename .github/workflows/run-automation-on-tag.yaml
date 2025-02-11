@@ -1,8 +1,16 @@
 name: Run Automation on Tag
 on:
-  push:
-    tags:
-      - "**"  # Trigger เมื่อมี Tag อะไรก็ได้ถูกสร้าง
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Tag to be used (e.g., all)"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - login
+          - apptInfo
 
 jobs:
   run-tests:
@@ -23,10 +31,10 @@ jobs:
         run:  npx playwright install
 
       - name: Extract Tag Name
-        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        run: echo "TAG_NAME=${{github.event.input.tag_name}}"
 
       - name: Run tests with tag filter
-        run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts" --grep $TAG_NAME
+        run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts" --grep ${{github.event.input.tag_name}} tag_name
         continue-on-error: true
 
       - name: Send To Teams
