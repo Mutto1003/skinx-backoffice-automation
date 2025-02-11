@@ -1,0 +1,28 @@
+name: Create Git Tag
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Tag to be used (e.g., v1.0.0)"
+        required: true
+        default: "v1.0.0"
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Create & Push Tag
+        run: |
+          git tag ${{ github.event.inputs.tag_name }}
+          git push origin ${{ github.event.inputs.tag_name }}
+
+      - name: Output Tag
+        run: echo "TAG_NAME=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV

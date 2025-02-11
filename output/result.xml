@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="21.202" tests="7" failures="1" skipped="1">
+  <testsuite name="Root Suite" timestamp="2025-02-10T14:04:44" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login SX Back Office" timestamp="2025-02-10T14:04:44" tests="7" file="/Users/panithan/skinx-backoffice-automation/tests/login/login.test.ts" time="21.201" failures="1">
+    <testcase name="Login SX Back Office: Verify that the login screen is displayed with fields for email and password. @login" time="0.014" classname="Verify that the login screen is displayed with fields for email and password. @login">
+    </testcase>
+    <testcase name="Login SX Back Office: Verify the user input invalid email field. @login" time="2.135" classname="Verify the user input invalid email field. @login">
+    </testcase>
+    <testcase name="Login SX Back Office: Verify the user input invalid password field. @login" time="1.197" classname="Verify the user input invalid password field. @login">
+    </testcase>
+    <testcase name="Login SX Back Office: Verify the user input empty email field. @login" time="0.990" classname="Verify the user input empty email field. @login">
+    </testcase>
+    <testcase name="Login SX Back Office: Verify the user input empty password field. @login" time="1.361" classname="Verify the user input empty password field. @login">
+      <failure message="Element &quot;//div[@id=&quot;password_help&quot;]/div[@class=&quot;ant-form-item-explain-error&quot;]&quot; was not found by text|CSS|XPath" type="Error"><![CDATA[Error: Element "//div[@id="password_help"]/div[@class="ant-form-item-explain-error"]" was not found by text|CSS|XPath
+    at new ElementNotFound (node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:15:11)
+    at assertElementExists (node_modules/codeceptjs/lib/helper/Playwright.js:3742:11)
+    at Playwright.proceedSee (node_modules/codeceptjs/lib/helper/Playwright.js:3565:5)]]></failure>
+    </testcase>
+    <testcase name="Login SX Back Office: Verify the user input invalid email format. @login" time="0.651" classname="Verify the user input invalid email format. @login">
+    </testcase>
+  </testsuite>
+</testsuites>

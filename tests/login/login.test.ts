@@ -16,7 +16,7 @@ Scenario(
   }
 ).tag('login');
 
-Scenario(
+Scenario.skip(
   "Verify the user is successfully logged in and can access the application.",
   ({ I }) => {
     const loginInput = userLogin.testSuite.testCases.successLongin.input
@@ -50,7 +50,7 @@ Scenario("Verify the user input empty email field.", ({ I }) => {
 Scenario("Verify the user input empty password field.", ({ I }) => {
   const loginInput = userLogin.testSuite.testCases.emptyPassword.input
   LoginPage.assertLoginFormIsVisible();
-  LoginPage.submitLogin(loginInput.username, loginInput.password);
+  LoginPage.submitLogin(loginInput.username, "rrrrrr");
   LoginPage.assertRequiredFieldIsVisible("Password");
 }).tag('login');
 

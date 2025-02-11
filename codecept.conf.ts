@@ -13,7 +13,7 @@ require('dotenv').config({
 setCommonPlugins();
 
 export const config: CodeceptJS.MainConfig = {
-  tests: './**/*.ts',
+  tests: 'tests/**/*.test.ts',
   plugins: {
     allure: {
       enabled: true,
@@ -29,6 +29,11 @@ export const config: CodeceptJS.MainConfig = {
     }
   },
   output: './output',
+  mocha: {
+    reporterOptions: {
+        mochaFile: "output/result.xml"
+    }
+  },
   helpers: {
     Playwright: {
       browser: 'chromium',

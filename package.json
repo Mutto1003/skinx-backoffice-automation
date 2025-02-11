@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test-all": "NODE_ENV=dev npx codeceptjs run \"tests/login/*.ts\"",
+    "test-all": "NODE_ENV=dev npx codeceptjs run \"tests/login/*.test.ts\" --reporter mocha-junit-reporter",
     "test-e2e": "NODE_ENV=dev npx codeceptjs run \"tests/**/*.ts\" --grep e2e",
     "test-with-tag": "NODE_ENV=dev npx codeceptjs run \"tests/**/*.ts\" --grep apptInfo",
     "genreport": "NODE_ENV=dev npx codeceptjs run \"tests/telemed/*.ts\" --plugins allure --grep '@apptInfo'",
@@ -16,7 +16,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "codeceptjs-testrail": "^1.12.0",
     "dotenv": "^16.4.7",
+    "mocha-junit-reporter": "^2.2.1",
     "playwright": "^1.49.0",
     "prettier": "^3.3.3"
   },

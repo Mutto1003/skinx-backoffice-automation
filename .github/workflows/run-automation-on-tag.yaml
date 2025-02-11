@@ -1,14 +1,11 @@
-name: Manual-Action-Workflow
+name: Run Automation on Tag
 on:
-  workflow_dispatch:
-    inputs:
-      tag_name:
-        description: "Tag to be used"
-        required: true
-        default: "all"
+  push:
+    tags:
+      - "**"  # Trigger เมื่อมี Tag อะไรก็ได้ถูกสร้าง
 
 jobs:
-  run-automation-test:
+  run-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -25,8 +22,11 @@ jobs:
       - name: Install CodeceptJs + Playwright
         run:  npx playwright install
 
-      - name: Run tests SkinX BackOffice
-        run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts"
+      - name: Extract Tag Name
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Run tests with tag filter
+        run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts" --grep $TAG_NAME
         continue-on-error: true
 
       - name: Send To Teams
