@@ -31,10 +31,10 @@ jobs:
         run:  npx playwright install
 
       - name: Extract Tag Name
-        run: echo "TAG_NAME=${{github.event.input.tag_name}}"
+        run: echo "TAG_NAME=${{ github.event.inputs.tag_name }}"
 
       - name: Run tests with tag filter
-        run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts" --grep ${{github.event.input.tag_name}} tag_name
+        run: NODE_ENV=dev npx codeceptjs run "tests/login/*.ts" --grep ${{ github.event.inputs.tag_name }}
         continue-on-error: true
 
       - name: Send To Teams
