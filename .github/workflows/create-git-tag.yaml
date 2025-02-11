@@ -22,10 +22,10 @@ jobs:
       - name: Tell me a secret!
         run: echo "My existing secret is ${{ secrets.GH_PAT }}"
 
-      # - name: Authenticate with PAT
-      #   run: git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
+      - name: Authenticate with PAT
+        run: git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
 
-      # - name: Create & Push Tag
-      #   run: |
-      #     git tag ${{ github.event.inputs.tag_name }}
-      #     git push origin ${{ github.event.inputs.tag_name }}
+      - name: Create & Push Tag
+        run: |
+          git tag ${{ github.event.inputs.tag_name }}
+          git push origin ${{ github.event.inputs.tag_name }}
